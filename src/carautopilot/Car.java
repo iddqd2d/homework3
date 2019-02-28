@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;
 
+import static javax.swing.text.html.HTML.Tag.HEAD;
+
 public class Car {
     private final String dateOfManufacture;
     private Engine typeEngine;
@@ -37,7 +39,7 @@ public class Car {
     public void changeSpeed(int speed) {
         if (getCurrentMaxSpeed() <= speed) {
             this.speed = speed;
-        }
+        } else this.speed = getCurrentMaxSpeed();
     }
 
     public boolean addPassenger() {
