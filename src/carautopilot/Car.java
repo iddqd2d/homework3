@@ -35,7 +35,9 @@ public class Car {
     }
 
     public void changeSpeed(int speed) {
-        this.speed = speed;
+        if (getCurrentMaxSpeed() <= speed) {
+            this.speed = speed;
+        }
     }
 
     public boolean addPassenger() {

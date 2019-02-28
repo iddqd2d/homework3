@@ -9,6 +9,7 @@ public class CurrentCar {
         System.out.println();
         car.getWheel(0).wipeTire(50);
         car.removeAllPassenger();
+        car.addPassenger();
         System.out.println(car);
     }
 
