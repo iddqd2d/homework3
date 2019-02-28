@@ -8,8 +8,7 @@ public class CurrentCar {
         System.out.println(car);
         System.out.println();
         car.getWheel(0).wipeTire(50);
-        car.getDoor(3).changeStateWindow();
-        car.removePassenger();
+        car.removeAllPassenger();
         System.out.println(car);
     }
 
