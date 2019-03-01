@@ -15,7 +15,7 @@ public class Car {
     private List<CarWheel> wheels;
     private List<CarDoor> doors;
 
-    Car(LocalDate date) {
+    public Car(LocalDate date) {
         this.dateOfManufacture = date;
         wheels = new ArrayList<>();
         doors = new ArrayList<>();
@@ -23,7 +23,7 @@ public class Car {
         addWheels(4);
     }
 
-    Car(LocalDate date, Engine typeEngine, int maxSpeed, int timeRacing100, int passengerCapacity, int passengerInCar, int speed) {
+    public Car(LocalDate date, Engine typeEngine, int maxSpeed, int timeRacing100, int passengerCapacity, int passengerInCar, int speed) {
         this(date);
         this.typeEngine = typeEngine;
         this.maxSpeed = maxSpeed;
@@ -59,7 +59,7 @@ public class Car {
     }
 
     public CarDoor getDoor(int key) {
-        return doors.get(key);
+        return (key >= 0 && doors.size() > key) ? doors.get(key) : null;
     }
 
     private void addDoors() {
@@ -69,7 +69,7 @@ public class Car {
     }
 
     public CarWheel getWheel(int key) {
-        return wheels.get(key);
+        return (key >= 0 && wheels.size() > key) ? wheels.get(key) : null;
     }
 
     public void removeAllWheels() {
