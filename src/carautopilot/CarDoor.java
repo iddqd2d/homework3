@@ -14,7 +14,6 @@ public class CarDoor {
         this.isWindowClosed = stateWindow;
     }
 
-
     public void openDoor() {
         this.isDoorClosed = false;
     }
@@ -45,10 +44,8 @@ public class CarDoor {
                 + "\nWindow state: " + echoState(isWindowClosed);
     }
 
-
     private String echoState(boolean state) {
         return (state) ? "closed" : "open";
     }
-
 
 }

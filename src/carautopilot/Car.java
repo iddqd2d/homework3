@@ -1,31 +1,29 @@
 package carautopilot;
 
-import java.util.Collections;
-import java.util.Date;
-import java.util.LinkedList;
+import java.time.LocalDate;
+import java.util.*;
 
-import static javax.swing.text.html.HTML.Tag.HEAD;
 
 public class Car {
-    private final String dateOfManufacture;
+    private final LocalDate dateOfManufacture;
     private Engine typeEngine;
     private int maxSpeed;
     private int timeRacing100;
     private int passengerCapacity;
     private int passengerInCar;
     private int speed;
-    private LinkedList<CarWheel> wheels;
-    private LinkedList<CarDoor> doors;
+    private List<CarWheel> wheels;
+    private List<CarDoor> doors;
 
-    Car(Date date) {
-        this.dateOfManufacture = date.toString();
-        wheels = new LinkedList<>();
-        doors = new LinkedList<>();
+    Car(LocalDate date) {
+        this.dateOfManufacture = date;
+        wheels = new ArrayList<>();
+        doors = new ArrayList<>();
         addDoors();
         addWheels(4);
     }
 
-    Car(Date date, Engine typeEngine, int maxSpeed, int timeRacing100, int passengerCapacity, int passengerInCar, int speed) {
+    Car(LocalDate date, Engine typeEngine, int maxSpeed, int timeRacing100, int passengerCapacity, int passengerInCar, int speed) {
         this(date);
         this.typeEngine = typeEngine;
         this.maxSpeed = maxSpeed;
